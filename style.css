@@ -1,0 +1,206 @@
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #0a1124;
+    color: #d0d3e4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Conteneur de l'upload */
+.upload-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Bouton d'upload */
+#upload-input {
+    display: none; /* Cache l'input */
+}
+
+#upload-btn {
+    display: inline-block;
+    background-color: #162447;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#upload-btn:hover {
+    .video-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(74, 144, 226, 0.5);
+    }
+}
+
+
+/* Styles pour la fenêtre modale */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1b1f38;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-actions #cancel-btn {
+    background: #f44336;
+    color: white;
+}
+
+.modal-actions #cancel-btn:hover {
+    background: #d32f2f;
+}
+
+.modal-actions #save-title-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.modal-actions #save-title-btn:hover {
+    background: #388e3c;
+}
+
+
+/* Grille des vidéos */
+#video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+#video-player {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Limite la hauteur à 80% de la fenêtre */
+}
+
+/* Style des miniatures */
+.video-card {
+    background-color: #162447;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-align: center;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.5);
+}
+
+.video-card h4 {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Lecteur vidéo */
+#player-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+#player-overlay.active {
+    display: flex;
+}
+
+#player-wrapper {
+    background-color: #1b1f38;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.7);
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+    text-align: center;
+}
+
+/* Bouton de fermeture */
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Suggestions */
+#suggestions {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.suggestion-card {
+    background-color: #2a3f66;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.suggestion-card:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming Local</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Liste des vidéos -->
+  <div id="video-container">
+    <h1>📺 Short CoiTube            <label id="upload-btn" for="upload-input">+</label></h1>
+<input type="file" id="upload-input" accept="video/*">
+    <div id="video-grid"></div>
+  </div>
+
+<!-- Boîte modale pour demander un titre -->
+<div id="title-modal" class="modal">
+  <div class="modal-content">
+    <h3>Donner un titre à la vidéo</h3>
+    <input type="text" id="video-title-input" placeholder="Entrez un titre" />
+    <div class="modal-actions">
+      <button id="cancel-btn">Annuler</button>
+      <button id="save-title-btn">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Lecteur vidéo en mode pop-up -->
+  <div id="player-overlay">
+    <div id="player-wrapper">
+      <button id="close-btn" onclick="closePlayer()">✖</button>
+      <video id="video-player" controls preload="none"></video>
+      <h2 id="video-title"></h2>
+      
+      <!-- Suggestions -->
+      <h3>Vidéos recommandées</h3>
+      <div id="suggestions"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
